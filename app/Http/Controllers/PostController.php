@@ -16,4 +16,16 @@ class PostController extends Controller
         ];
         return view('posts/index', ['posts' => $allPosts]);
     }
+
+    public function show($postId)
+    {
+        $singlePost = [
+            'id' => 1,
+            'title' => "php",
+            'discription' => "PHP is a popular general-purpose scripting language that is especially suited to web development.",
+            'posted_by' => "Ahmed",
+            'created_at' => '2022-10-10 09:00:00'
+        ];
+        return  view('posts/show', ['singlePost' => $singlePost]);
+    }
 }

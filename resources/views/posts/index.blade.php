@@ -28,7 +28,7 @@
             </div>
         </nav>
 
-        <div class="container mt-5">
+        <div class="container mt-4">
             <div class="text-center">
                 <button type="button" class="btn btn-success">Create Post</button>
             </div>
@@ -51,9 +51,9 @@
                             <td>{{ $post['posted_by'] }}</td>
                             <td>{{ $post['created_at'] }}</td>
                             <td>
-                                <button type="button" class="btn btn-info">View</button>
-                                <button type="button" class="btn btn-primary">Edit</button>
-                                <button type="button" class="btn btn-danger">Delete</button>
+                                <a href="{{ route ('/posts/{post}', $post['id']) }}" type="button" class="btn btn-info">View</a>
+                                <a  type="button" class="btn btn-primary">Edit</a>
+                                <a  type="button" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
                     @endforeach
@@ -66,3 +66,5 @@
     </body>
 
 </html>
+{{-- href="{{ route ('posts.edit', $post['id']) }}" --}}
+{{-- href="{{ route ('posts.destroy', $post['id']) }}" --}}
